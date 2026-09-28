@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: lavalink-server
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: SERVER_PORT
+        value: "2333"
+      - key: LAVALINK_SERVER_PASSWORD
+        value: "zetachei"
+      - key: NODE_NAME
+        value: "zetachei"
+      - key: _JAVA_OPTIONS
+        value: "-Xmx320M"
